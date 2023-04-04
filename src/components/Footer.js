@@ -1,9 +1,27 @@
-import React from 'react'
+import React from "react";
+import {
+  Navbar,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  NavbarText,
+} from "reactstrap";
 
-const Footer = () => {
+function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <div>
+      <Navbar color="dark" light="true" dark="true" expand="md" fixed="bottom">
+        <NavbarBrand href="/">BeerTinder</NavbarBrand>
+        <Nav className="me-auto" navbar>
+          <NavItem>
+            <NavLink href="/">Back to Top</NavLink>
+          </NavItem>
+        </Nav>
+        <NavbarText>Have you met me?</NavbarText>
+      </Navbar>
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;
