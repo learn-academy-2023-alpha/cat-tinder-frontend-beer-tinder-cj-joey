@@ -8,7 +8,7 @@ import {
   NavbarText,
 } from "reactstrap";
 
-function Footer() {
+const Footer = () => {
   return (
     <div>
       <Navbar color="dark" light="true" dark="true" expand="md" fixed="bottom">
@@ -22,6 +22,6 @@ function Footer() {
       </Navbar>
     </div>
   );
-}
+};
 
 export default Footer;

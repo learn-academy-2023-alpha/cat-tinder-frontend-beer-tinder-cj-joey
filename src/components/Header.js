@@ -14,7 +14,7 @@ import {
   NavbarText,
 } from "reactstrap";
 
-function Header(args) {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -49,6 +49,6 @@ function Header(args) {
       </Navbar>
     </div>
   );
-}
+};
 
 export default Header;
