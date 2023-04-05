@@ -18,7 +18,6 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className="spacer"></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/beerindex" element={<BeerIndex />} />

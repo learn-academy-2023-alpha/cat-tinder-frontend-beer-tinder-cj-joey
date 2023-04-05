@@ -13,6 +13,7 @@ import {
   DropdownItem,
   NavbarText,
 } from "reactstrap";
+import beerLogo from "../assets/beer-logo.jpg";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +21,11 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="dark" light="true" dark="true" expand="md" fixed="top">
+    <header className="header">
+      <Navbar color="dark" light={true} dark={true} expand="md" fixed="top">
+        <NavbarBrand href="/">
+          <img src={beerLogo} alt="beer logo" className="beer-logo" />
+        </NavbarBrand>
         <NavbarBrand href="/">BeerTinder</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -36,7 +40,7 @@ const Header = () => {
               <DropdownToggle nav caret>
                 More
               </DropdownToggle>
-              <DropdownMenu right>
+              <DropdownMenu end>
                 <DropdownItem>Leave a Review</DropdownItem>
                 <DropdownItem>About us</DropdownItem>
                 <DropdownItem divider />
@@ -47,7 +51,7 @@ const Header = () => {
           <NavbarText>Have you met me?</NavbarText>
         </Collapse>
       </Navbar>
-    </div>
+    </header>
   );
 };
 
