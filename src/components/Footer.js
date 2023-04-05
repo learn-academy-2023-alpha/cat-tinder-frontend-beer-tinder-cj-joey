@@ -10,17 +10,25 @@ import {
 
 const Footer = () => {
   return (
-    <div>
-      <Navbar color="dark" light="true" dark="true" expand="md" fixed="bottom">
-        <NavbarBrand href="/">BeerTinder</NavbarBrand>
-        <Nav className="me-auto" navbar>
-          <NavItem>
-            <NavLink href="/">Back to Top</NavLink>
-          </NavItem>
-        </Nav>
-        <NavbarText>Have you met me?</NavbarText>
-      </Navbar>
-    </div>
+    <>
+      <footer>
+        <Navbar
+          color="dark"
+          light={true}
+          dark={true}
+          expand="md"
+          fixed="bottom"
+        >
+          <NavbarBrand href="/">BeerTinder</NavbarBrand>
+          <Nav className="me-auto" navbar>
+            <NavItem>
+              <NavLink href="/">Back to Top</NavLink>
+            </NavItem>
+          </Nav>
+          <NavbarText>&copy; Alpha 2023 | Joey🦘 and CJ</NavbarText>
+        </Navbar>
+      </footer>
+    </>
   );
 };
 

@@ -1,10 +1,11 @@
-.spacer {
-  height: 56px;
+.header {
+	margin-bottom: 85px;
 }
-
-
-
-
+.beer-logo {
+	height: 60px;
+	width: 60px;
+	border-radius:180px;
+}
 /*======================
     404 page
 =======================*/
