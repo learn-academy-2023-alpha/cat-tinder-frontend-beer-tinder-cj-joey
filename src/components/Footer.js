@@ -19,7 +19,7 @@ const Footer = () => {
           expand="md"
           fixed="bottom"
         >
-          <NavbarBrand href="/">BeerTinder</NavbarBrand>
+          <NavbarBrand href="/">BrewBud</NavbarBrand>
           <Nav className="me-auto" navbar>
             <NavItem>
               <NavLink href="/">Back to Top</NavLink>

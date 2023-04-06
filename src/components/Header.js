@@ -26,7 +26,7 @@ const Header = () => {
         <NavbarBrand href="/">
           <img src={beerLogo} alt="beer logo" className="beer-logo" />
         </NavbarBrand>
-        <NavbarBrand href="/">BeerTinder</NavbarBrand>
+        <NavbarBrand href="/">BrewBud</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
