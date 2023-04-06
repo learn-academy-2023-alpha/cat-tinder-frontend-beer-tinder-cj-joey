@@ -13,13 +13,16 @@ const Footer = () => {
     <>
       <footer>
         <Navbar
+          className="navbar-footer"
           color="dark"
           light={true}
           dark={true}
           expand="md"
           fixed="bottom"
         >
-          <NavbarBrand href="/">BrewBud</NavbarBrand>
+          <NavbarBrand href="/" className="brand-name">
+            BrewBud
+          </NavbarBrand>
           <Nav className="me-auto" navbar>
             <NavItem>
               <NavLink href="/">Back to Top</NavLink>
