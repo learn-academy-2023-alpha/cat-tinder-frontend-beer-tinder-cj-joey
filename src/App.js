@@ -13,12 +13,9 @@ import mockBeers from "./mockBeers";
 
 const App = () => {
   const [beers, setBeers] = useState(mockBeers);
-  console.log(beers);
-
   const createBeer = (beer) => {
     console.log("Created Beer:", beer);
   };
-
   return (
     <>
       <Header />
