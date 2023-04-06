@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import mockBeers from "./mockBeers";
 
+
 const App = () => {
   const [beers, setBeers] = useState(mockBeers);
   console.log(beers);
@@ -20,8 +21,8 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/beerindex" element={<BeerIndex />} />
-        <Route path="/beershow" element={<BeerShow />} />
+        <Route path="/beerindex" element={<BeerIndex key={beers.id} beers={beers}/>} />
+        <Route path="/beershow/:id" element={<BeerShow  beers ={beers}/>} />
         <Route path="/beernew" element={<BeerNew />} />
         <Route path="/beeredit" element={<BeerEdit />} />
         <Route path="*" element={<NotFound />} />
