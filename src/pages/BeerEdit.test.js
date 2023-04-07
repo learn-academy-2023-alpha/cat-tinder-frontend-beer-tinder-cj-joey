@@ -1,20 +1,24 @@
 import { render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
-import BeerNew from "./BeerNew";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
+import BeerEdit from "./BeerEdit";
+import beers from '../mockBeers'
 
-describe("<BeerNew />", () => {
+describe("<BeerEdit />",  () => {
   beforeEach(() => {
-    render(
-      <BrowserRouter>
-        <BeerNew />
-      </BrowserRouter>
-    );
-  });
-  it("Renders the BeerNew page for the user", () => {
-    const inputTitle = screen.getByText("Beer Name");
+    render (
+    <MemoryRouter initialEntries={["/beeredit/1"]}>
+      <Routes>
+        <Route path="/beeredit/:id" element={<BeerEdit beers={beers}/>}/>
+      </Routes>
+    </MemoryRouter>
+  )
+    })
+  it("Renders the BeerEdit page for the user", () => {
+    const inputTitle = screen.getByText(`Update: ${beers[0].name}`);
     expect(inputTitle).toBeInTheDocument();
   });
   it("has a form with entries for name, brewer, beer type, description, and image", () => {
+    
     const formName = screen.getByText(/name/i);
     expect(formName.getAttribute("for")).toEqual("name");
 

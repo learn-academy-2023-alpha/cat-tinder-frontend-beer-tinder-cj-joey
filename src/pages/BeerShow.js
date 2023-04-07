@@ -31,8 +31,8 @@ const BeerShow = ({ beers }) => {
               </ListGroupItem>
             </ListGroup>
             <CardBody>
-              <CardLink href="#">Card Link</CardLink>
-              <CardLink href="#">Another Card Link</CardLink>
+              <CardLink href={`/beeredit/${selectedBeer.id}`}>Edit Beer</CardLink>
+              <CardLink href="">Another Card Link</CardLink>
             </CardBody>
           </Card>
         )}
