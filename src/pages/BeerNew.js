@@ -46,8 +46,8 @@ const BeerNew = ({ createBeer }) => {
         </FormGroup>{" "}
         <FormGroup floating>
           <Input
-            id="exampleBeerType"
-            name="beer type"
+            id="examplebeer_type"
+            name="beer_type"
             placeholder="Beer Type"
             type="text"
             onChange={handleChange}

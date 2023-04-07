@@ -1,9 +1,27 @@
 * {
 	text-align: center;
+	
 }
 
 header {
 	margin-bottom: 85px;
+	
+}
+.brand-name {
+	font-family: 'Delicious Handrawn', cursive;
+	font-family: 'Permanent Marker', cursive;
+}
+.navbar-header {
+	font-family: 'Poppins', sans-serif;
+	
+}
+
+.beer-card {
+	display:flex;
+	flex-direction:row;
+	flex-wrap: wrap;
+	margin: 40px;
+	justify-content:space-evenly;
 }
 footer {
 	margin-bottom: 85px;

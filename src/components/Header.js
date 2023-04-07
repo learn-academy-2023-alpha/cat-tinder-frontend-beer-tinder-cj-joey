@@ -21,20 +21,32 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <header className="header">
-      <Navbar color="dark" light={true} dark={true} expand="md" fixed="top">
+    <header>
+      <Navbar
+        className="navbar-header"
+        color="dark"
+        dark={true}
+        expand="md"
+        fixed="top"
+      >
         <NavbarBrand href="/">
           <img src={beerLogo} alt="beer logo" className="beer-logo" />
         </NavbarBrand>
-        <NavbarBrand href="/">BrewBud</NavbarBrand>
+        <NavbarBrand href="/" className="brand-name">
+          BrewBud
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
             <NavItem>
-              <NavLink href="/beerindex">All Beers</NavLink>
+              <NavLink href="/beerindex" className="navlink">
+                All Beers
+              </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/beernew">Add a Beer</NavLink>
+              <NavLink href="/beernew" className="navlink">
+                Add a Beer
+              </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>

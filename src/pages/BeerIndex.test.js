@@ -16,5 +16,5 @@ describe("<BeerIndex />", ()=> {
             expect(beerName).toBeInTheDocument()
         })
     })
-})
+   })
 
