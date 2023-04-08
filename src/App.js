@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import BeerEdit from "./pages/BeerEdit";
@@ -12,17 +12,55 @@ import NotFound from "./pages/NotFound";
 import mockBeers from "./mockBeers";
 
 const App = () => {
-  const [beers, setBeers] = useState(mockBeers);
+  const [beers, setBeers] = useState([]);
 
-  const createBeer = (beer) => {
-    console.log("Created Beer:", beer);
+  const readBeer = () => {
+    fetch("http://localhost:3000/beers")
+      .then((response) => response.json())
+      .then((payload) => setBeers(payload))
+      .catch((error) => console.log(error));
   };
 
-  const updateBeer = (beer,id) => {
-    console.log("beer:", beer)
-    console.log("id:", id)
-  }
+  const createBeer = (beer) => {
+    fetch("http://localhost:3000/beers", {
+      body: JSON.stringify(beer),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((response) => response.json())
+      .then((payload) => readBeer(payload))
+      .catch((errors) => console.log("Beer create errors:", errors));
+  };
 
+  const updateBeer = (beer, id) => {
+    fetch(`http://localhost:3000/beers/${id}`, {
+      body: JSON.stringify(beer),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PATCH",
+    })
+      .then((response) => response.json())
+      .then((payload) => readBeer(payload))
+      .catch((errors) => console.log("Beer create errors:", errors));
+  };
+
+  const deleteBeer = (id) => {
+    fetch(`http://localhost:3000/beers/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((response) => response.json())
+      .then((payload) => readBeer(payload))
+      .catch((errors) => console.log("delete errors:", errors));
+  };
+  useEffect(() => {
+    readBeer();
+  }, []);
   return (
     <>
       <Header />
@@ -32,9 +70,21 @@ const App = () => {
           path="/beerindex"
           element={<BeerIndex key={beers.id} beers={beers} />}
         />
-        <Route path="/beershow/:id" element={<BeerShow beers={beers} />} />
+        <Route
+          path="/beershow/:id"
+          element={<BeerShow beers={beers} deleteBeer={deleteBeer} />}
+        />
         <Route path="/beernew" element={<BeerNew createBeer={createBeer} />} />
-        <Route path="/beeredit/:id" element={<BeerEdit  beers={beers} updateBeer={updateBeer}/>} />
+        <Route
+          path="/beeredit/:id"
+          element={
+            <BeerEdit
+              beers={beers}
+              updateBeer={updateBeer}
+              useEffect={useEffect}
+            />
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

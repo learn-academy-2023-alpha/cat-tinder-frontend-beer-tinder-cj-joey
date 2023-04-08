@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {
   Card,
   CardBody,
@@ -7,12 +7,19 @@ import {
   CardTitle,
   ListGroup,
   ListGroupItem,
+  Button,
 } from "reactstrap";
 
-const BeerShow = ({ beers }) => {
+const BeerShow = ({ beers, deleteBeer }) => {
   const { id } = useParams();
+  const navigate = useNavigate();
   let selectedBeer = beers.find((beer) => beer.id === +id);
   console.log(selectedBeer);
+
+  const handleSubmit = () => {
+    deleteBeer(id);
+    navigate("/beerindex");
+  };
 
   return (
     <>
@@ -31,8 +38,12 @@ const BeerShow = ({ beers }) => {
               </ListGroupItem>
             </ListGroup>
             <CardBody>
-              <CardLink href={`/beeredit/${selectedBeer.id}`}>Edit Beer</CardLink>
-              <CardLink href="">Another Card Link</CardLink>
+              <CardLink href={`/beeredit/${selectedBeer.id}`}>
+                Edit Beer
+              </CardLink>
+              <CardLink>
+                <Button onClick={handleSubmit}> Delete Beer </Button>
+              </CardLink>
             </CardBody>
           </Card>
         )}
