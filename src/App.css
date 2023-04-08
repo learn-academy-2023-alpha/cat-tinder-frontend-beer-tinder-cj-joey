@@ -13,9 +13,17 @@ header {
 }
 .navbar-header {
 	font-family: 'Poppins', sans-serif;
+	color:black;
 	
 }
-
+.nav-item .navlink:hover {
+	color: yellow;
+}
+.description-input {
+	display:flex;
+	flex-wrap: wrap;
+	height: 200px;
+}
 .beer-card {
 	display:flex;
 	flex-direction:row;
