@@ -39,6 +39,16 @@ footer {
 	width: 60px;
 	border-radius:180px;
 }
+.updateToast{
+	display: flex;
+	justify-content: center;
+	z-index: 1000;
+}
+
+.toast{
+z-index: 1000;
+position: fixed;
+}
 /*======================
     404 page
 =======================*/
@@ -77,3 +87,5 @@ footer {
 .contant_box_404{ 
 	margin-top:-50px;
 }
+
+

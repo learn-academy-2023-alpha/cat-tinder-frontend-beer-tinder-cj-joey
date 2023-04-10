@@ -10,7 +10,7 @@ const BeerNew = ({ createBeer }) => {
     brewer: "",
     beer_type: "",
     description: "",
-    image: { defaultImage },
+    image: defaultImage,
   });
   const handleChange = (e) => {
     setNewBeer({ ...newBeer, [e.target.name]: e.target.value });
@@ -31,6 +31,7 @@ const BeerNew = ({ createBeer }) => {
             placeholder="Beer Name"
             type="text"
             onChange={handleChange}
+
           />
           <Label for="name">Beer Name</Label>
         </FormGroup>{" "}
@@ -71,6 +72,7 @@ const BeerNew = ({ createBeer }) => {
             placeholder="Image"
             type="text"
             onChange={handleChange}
+            value={newBeer.image}
           />
           <Label for="image">Image</Label>
         </FormGroup>{" "}
