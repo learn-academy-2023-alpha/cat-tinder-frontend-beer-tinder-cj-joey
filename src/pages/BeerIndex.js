@@ -8,7 +8,6 @@ import {
 } from "reactstrap";
 
 const BeerIndex = ({ beers }) => {
-  console.log(beers);
   return (
     <div className="beer-card">
       {beers.map((value, index) => {
