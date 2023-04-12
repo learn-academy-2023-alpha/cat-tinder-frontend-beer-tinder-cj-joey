@@ -12,7 +12,7 @@ const BeerIndex = ({ beers }) => {
     <div className="beer-card">
       {beers.map((value, index) => {
         return (
-          <Card key={index} style={{ width: "18rem" }}>
+          <Card key={index} style={{ maxWidth: "18rem" }} body>
             <img alt="beer profile" src={value.image} />
             <CardBody>
               <CardTitle tag="h5">

@@ -31,7 +31,6 @@ const BeerNew = ({ createBeer }) => {
             placeholder="Beer Name"
             type="text"
             onChange={handleChange}
-
           />
           <Label for="name">Beer Name</Label>
         </FormGroup>{" "}
@@ -60,7 +59,7 @@ const BeerNew = ({ createBeer }) => {
             id="exampleDescription"
             name="description"
             placeholder="Description"
-            type="text"
+            type="textarea"
             onChange={handleChange}
           />
           <Label for="description">Description</Label>

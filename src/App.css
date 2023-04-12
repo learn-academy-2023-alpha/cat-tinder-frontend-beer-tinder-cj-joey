@@ -4,7 +4,7 @@
 }
 
 header {
-	margin-bottom: 85px;
+	margin-bottom: 80px;
 	
 }
 .brand-name {
@@ -17,7 +17,7 @@ header {
 	
 }
 .nav-item .navlink:hover {
-	color: yellow;
+	color: #c96e12;
 }
 .description-input {
 	display:flex;
@@ -30,6 +30,16 @@ header {
 	flex-wrap: wrap;
 	margin: 40px;
 	justify-content:space-evenly;
+}
+form{
+	margin-inline: 60px;
+}
+.card.card-body {
+	border: 2px solid grey;
+	margin: 10px;
+}
+.beer-card .card{
+	border: 2px solid grey;
 }
 footer {
 	margin-bottom: 85px;
@@ -44,10 +54,32 @@ footer {
 	justify-content: center;
 	z-index: 1000;
 }
+.home-page {
+	background-image: url("./assets/beer-bg.jpeg");
+	height: 100vh;
+	margin-top: -20px;
+	margin-bottom: -30px;
+	font-family: 'Delicious Handrawn', cursive;
+	font-family: 'Permanent Marker', cursive;
+}
+.card-title a {
+	text-decoration: none;
+	font-family: 'Delicious Handrawn', cursive;
+	font-family: 'Permanent Marker', cursive;
+	color:black;
+	transition: .3s ease;
+}
 
+
+.card-title a:hover {
+	color: #c96e12;
+}
 .toast{
 z-index: 1000;
 position: fixed;
+}
+img {
+	border-radius: 5px;
 }
 /*======================
     404 page

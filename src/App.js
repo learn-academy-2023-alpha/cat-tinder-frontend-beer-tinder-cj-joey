@@ -9,18 +9,14 @@ import BeerNew from "./pages/BeerNew";
 import BeerShow from "./pages/BeerShow";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
-import mockBeers from "./mockBeers";
-import {Toast, ToastHeader, ToastBody} from "reactstrap"
 import ToastHandler from "./components/ToastHandler";
-
 
 const App = () => {
   const [beers, setBeers] = useState([]);
   const [toastMessage, setToastMessage] = useState({
     header: "",
     body: "",
-  })
-  
+  });
 
   const readBeer = () => {
     fetch("http://localhost:3000/beers")
@@ -38,11 +34,13 @@ const App = () => {
       method: "POST",
     })
       .then((response) => response.json())
-      .then((payload) => readBeer(payload), 
-      setToastMessage({
-        header: "Create Successful", 
-        body: "You Successfully Created a Brew Bud"
-      }))
+      .then(
+        (payload) => readBeer(payload),
+        setToastMessage({
+          header: "Create Successful",
+          body: "You Successfully Created a Brew Bud",
+        })
+      )
       .catch((errors) => console.log("Beer create errors:", errors));
   };
 
@@ -55,11 +53,13 @@ const App = () => {
       method: "PATCH",
     })
       .then((response) => response.json())
-      .then((payload) => readBeer(payload), 
-      setToastMessage({
-        header: "Update Successful", 
-        body: "You Successfully Updated your Brew Bud"
-      }))
+      .then(
+        (payload) => readBeer(payload),
+        setToastMessage({
+          header: "Update Successful",
+          body: "You Successfully Updated your Brew Bud",
+        })
+      )
       .catch((errors) => console.log("Beer create errors:", errors));
   };
 
@@ -71,11 +71,13 @@ const App = () => {
       method: "DELETE",
     })
       .then((response) => response.json())
-      .then((payload) => readBeer(payload), 
-      setToastMessage({
-        header: "Delete Successful", 
-        body: "You Successfully deleted your Brew Bud"
-      }))
+      .then(
+        (payload) => readBeer(payload),
+        setToastMessage({
+          header: "Delete Successful",
+          body: "You Successfully deleted your Brew Bud",
+        })
+      )
       .catch((errors) => console.log("delete errors:", errors));
   };
   useEffect(() => {
@@ -84,7 +86,7 @@ const App = () => {
   return (
     <>
       <Header />
-          <ToastHandler toastMessage={toastMessage}/>
+      <ToastHandler toastMessage={toastMessage} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
